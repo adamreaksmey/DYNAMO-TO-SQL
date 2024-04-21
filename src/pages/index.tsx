@@ -68,6 +68,8 @@ const Home = () => {
             </div>
             <li>
               I will review your pull request, then merge it to main branch.
+              this rule will apply to me too, i will also create a pull request
+              first too before i merge it to main branch. good luck!
             </li>
           </div>
         </CardBody>
