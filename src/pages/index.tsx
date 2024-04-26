@@ -17,10 +17,10 @@ const Home: () => JSX.Element = () => {
         <CardHeader className="flex gap-3">
           <Image
             alt="nextui logo"
-            height={50}
+            height={55}
             radius="sm"
             src="https://avatars.githubusercontent.com/u/86160567?s=200&v=4"
-            width={50}
+            width={55}
           />
           <div className="flex flex-col">
             <p className="text-md">NextUI</p>
