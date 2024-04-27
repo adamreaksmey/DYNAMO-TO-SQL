@@ -8,9 +8,9 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children }) => {
   return (
-    <div className="px-3 sm:px-4">
+    <div>
       <NavBar />
-      {children}
+      <div className="max-w-[1280px] mx-auto px-3 sm:px-4">{children}</div>
       <Footer />
     </div>
   )

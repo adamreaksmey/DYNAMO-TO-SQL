@@ -21,6 +21,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-start-hex);
+  min-height: 100vh;
 }
 
 @layer utilities {
