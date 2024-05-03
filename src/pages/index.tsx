@@ -12,7 +12,7 @@ const index = () => {
     <Layout>
       <div className="flex gap-4">
         <Button
-          className={`h-[30px] ${isConvertor ? 'border-none bg-blue-500 text-white' : 'bg-transparent border-1 text-blue-600'}`} // Add active class conditionally
+          className={`h-[30px] ${isConvertor ? 'border-none bg-blue-500 text-white' : 'bg-transparent border-1 text-blue-600'}`}
           onClick={() => setIsConvertor(true)}
         >
           Convertor
@@ -21,7 +21,7 @@ const index = () => {
           onClick={() => setIsConvertor(false)}
           color="primary"
           variant="faded"
-          className={`h-[30px] bg-transparent border-1 ${!isConvertor ? 'bg-blue-500 text-white border-none' : ''}`} // Add `!isConvertor` for the opposite condition
+          className={`h-[30px] bg-transparent border-1 ${!isConvertor ? 'bg-blue-500 text-white border-none' : ''}`}
         >
           Modifier
         </Button>

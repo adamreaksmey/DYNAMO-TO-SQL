@@ -1,6 +1,6 @@
 //
 const Convertor = () => {
-  return <div>Convertor</div>
+  return <div></div>
 }
 
 export default Convertor
