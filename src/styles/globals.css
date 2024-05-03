@@ -5,6 +5,8 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
+  --background-start-hex: #010f1f;
+  --background-end-hex: #02162c;
   --background-end-rgb: 255, 255, 255;
 }
 
@@ -18,16 +20,15 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--background-start-hex);
+  min-height: 100vh;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+a.active {
+  border-bottom: 1px solid blue;
 }

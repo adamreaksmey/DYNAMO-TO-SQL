@@ -1,5 +1,11 @@
-const AboutUs = () => {
-  return <div>about us page</div>;
-};
+import Layout from '../Layout'
 
-export default AboutUs;
+const AboutUs = () => {
+  return (
+    <Layout>
+      <div></div>
+    </Layout>
+  )
+}
+
+export default AboutUs
