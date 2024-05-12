@@ -7,7 +7,7 @@ import {
   Link,
   Image,
 } from '@nextui-org/react'
-import Layout from '../Layout'
+import Layout from '../layout/Layout'
 
 const lucidLink: string = `https://lucid.app/lucidchart/d3d6913d-705a-45fe-b081-921d61699fad/edit?viewport_loc=-411%2C974%2C3166%2C1768%2C0_0&invitationId=inv_1df46744-5c9a-423c-9592-15912ba1203d`
 const profile = () => {
