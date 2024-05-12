@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Layout from './Layout'
+import Layout from './layout/Layout'
 import { useState } from 'react'
 import Convertor from '@/components/homepage/Convertor'
 import Modifier from '@/components/homepage/Modifier'

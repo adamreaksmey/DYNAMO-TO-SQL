@@ -1,3 +1,5 @@
+import { Logger } from '@/functions/utils/functions'
+
 export const navBarData = [
   {
     index: 1,
@@ -11,3 +13,5 @@ export const navBarData = [
     navTitle: 'Contact Us',
   },
 ]
+
+Logger({ message: 'Hello World', option: 'success' })
