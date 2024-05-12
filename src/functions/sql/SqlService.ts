@@ -1,3 +1,5 @@
+import { promises as pfs } from 'fs'
+
 export class SqlService {
   constructor() {}
 
@@ -8,6 +10,9 @@ export class SqlService {
    * @returns
    */
   sqlToObjects(sql: string): any[] {
+    // Remove semi colons
+    sql = SqlService.preprocessSql(sql)
+
     // Split the input into individual INSERT statements
     const statements: string[] = sql
       .split(';')
@@ -73,6 +78,22 @@ export class SqlService {
       return rowObject
     }
 
-    return statements.map(parseInsertStatement)
+    return statements
+      .map(parseInsertStatement)
+      .map(SqlService.replaceNullWithEmptyString)
+  }
+
+  private static replaceNullWithEmptyString(data: any) {
+    for (const key in data) {
+      if (data[key] === 'NULL') {
+        data[key] = ''
+      }
+    }
+    return data
+  }
+
+  private static preprocessSql(sql: string) {
+    // Remove all semicolons that are not at the end of a line to avoid parsing error
+    return sql.replace(/;(?!\s*$)/g, '')
   }
 }
