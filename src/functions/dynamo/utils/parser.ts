@@ -4,7 +4,6 @@ import fs from 'fs'
  * F - 00001 | The Dynamo parser function.
  * @param {*} inputFilename
  * @param {*} outputFilename
- * @param {*} fs
  * 
  * The following function converts and parse DynamoDB json into a proper
  * JavaScript json.
