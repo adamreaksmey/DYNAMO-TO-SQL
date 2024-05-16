@@ -8,11 +8,18 @@ const Convertor = () => {
   return (
     <div>
       <div>
-        <div>
-          <Select size={'md'} label="Select an animal" className="max-w-xs">
-            {dataitem.map((animal) => (
-              <SelectItem key={animal.value} value={animal.value}>
-                {animal.label}
+        <div className="my-3">
+          <Select
+            label="Favorite Animal"
+            placeholder="what do you convert to?"
+            labelPlacement="outside"
+            className="w-[150px]"
+            disableSelectorIconRotation
+            radius={'full'}
+          >
+            {dataitem.map(({ title }) => (
+              <SelectItem key={title} value={title} className="text-black">
+                {title}
               </SelectItem>
             ))}
           </Select>
