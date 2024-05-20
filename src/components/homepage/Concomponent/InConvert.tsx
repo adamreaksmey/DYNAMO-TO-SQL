@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Button, Select, SelectItem, Spinner } from '@nextui-org/react'
 import { dataitem } from '../data'
 import { FaArrowRight, FaDownload } from 'react-icons/fa'
 import Sql from './components/Sql'
-import Csv from './components/csv'
+import Csv from './components/Csv'
 import DynamoDb from './components/DynamoDb'
-import { CheckCircleIcon, XMarkIcon } from '@heroicons/react/16/solid'
+import DisabledButton from '../button/DisabledButton'
+import { FileContext } from '@/pages'
+
+type FileContextType = {
+  fileImport: () => void
+}
 
 type PropsType = {
   InConvertCetagories: string
@@ -24,6 +29,7 @@ const InConvert: React.FC<PropsType> = ({
   convertStatus,
   setConvetStatus,
 }) => {
+  const { fileImport } = useContext<any>(FileContext)
   return (
     <section className="my-3 bg-blue-950 p-3 rounded-sm">
       <div className="flex items-center gap-4">
@@ -79,14 +85,7 @@ const InConvert: React.FC<PropsType> = ({
         {ConvertCetagories === '' ||
         InConvertCetagories === '' ||
         ConvertCetagories === InConvertCetagories ? (
-          <Button
-            variant="solid"
-            size="sm"
-            className="rounded-full text-[15px] bg-gray-600 cursor-not-allowed"
-            disabled
-          >
-            Convert
-          </Button>
+          <DisabledButton title="Convert" />
         ) : (
           <Button
             color="primary"
@@ -99,21 +98,14 @@ const InConvert: React.FC<PropsType> = ({
         )}
         <div>
           {convertStatus === 'loading' ? (
-            <Button
-              color="primary"
-              variant="faded"
-              size="sm"
-              className="rounded-full bg-gray-800 text-black text-[15px] cursor-not-allowed"
-              disabled
-            >
-              Upload file
-            </Button>
+            <DisabledButton title={'Upload file'} />
           ) : (
             <Button
               color="primary"
               variant="faded"
               size="sm"
               className="rounded-full bg-transparent text-[15px]"
+              onClick={() => fileImport()}
             >
               Upload file
             </Button>

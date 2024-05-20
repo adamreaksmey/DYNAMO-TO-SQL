@@ -1,11 +1,12 @@
 import { CheckCircleIcon, XMarkIcon } from '@heroicons/react/16/solid'
 import { Spinner } from '@nextui-org/spinner'
-import React from 'react'
+import React, { useContext } from 'react'
 import Sql from './components/Sql'
-import Csv from './components/csv'
+import Csv from './components/Csv'
 import DynamoDb from './components/DynamoDb'
 import { Button } from '@nextui-org/react'
 import { FaDownload } from 'react-icons/fa'
+import DisabledButton from '../button/DisabledButton'
 
 type PropsType = {
   InConvertCetagories: string
@@ -58,15 +59,7 @@ const ConvertTo: React.FC<PropsType> = ({
         </div>
         <aside>
           {convertStatus !== 'success' ? (
-            <Button
-              color="primary"
-              size="sm"
-              className="rounded-full bg-gray-600 cursor-not-allowed text-black"
-              disabled
-            >
-              <FaDownload />
-              Download
-            </Button>
+            <DisabledButton title="Download" />
           ) : (
             <Button color="primary" size="sm" className="rounded-full">
               <FaDownload />

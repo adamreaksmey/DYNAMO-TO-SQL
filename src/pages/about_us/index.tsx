@@ -3,7 +3,7 @@ import Layout from '../layout/Layout'
 const AboutUs = () => {
   return (
     <Layout>
-      <div></div>
+      <div className="min-h-[80vh]"></div>
     </Layout>
   )
 }
