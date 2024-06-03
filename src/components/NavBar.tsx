@@ -20,7 +20,7 @@ export default function App() {
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       maxWidth={'xl'}
-      className="bg-transparent sm:py-4 mb-4"
+      className="bg-transparent mb-4"
     >
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
